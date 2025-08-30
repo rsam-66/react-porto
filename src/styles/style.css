@@ -1,0 +1,56 @@
+/* 1) General */
+body { font-family: 'Inter', sans-serif; }
+
+/* 2) Header */
+.header-bg{
+  background: linear-gradient(rgba(0,0,0,.4),rgba(0,0,0,.4)), url("/images/header.jpg") no-repeat center center;
+  background-size: cover; background-position: center; background-repeat: no-repeat; height: 300px;
+}
+.header-bg h1, .header-bg .profile-info .lead, .header-bg .profile-info p:not(.lead){ color: #fff; }
+.header-bg .profile-info p:not(.lead){ font-weight: bold; }
+
+/* 3) Profile */
+.profile-photo-gradient{
+  object-fit: cover; object-position: center 10%; height: 100%; width: 100%; display:block;
+  -webkit-mask-image: linear-gradient(to right,black 65%,transparent 100%);
+  mask-image: linear-gradient(to right,black 65%,transparent 100%);
+  -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+}
+@media (max-width:768px){
+  .profile-photo-gradient{ width:180px; height:180px; border-radius:50%; object-position:center; -webkit-mask-image:none; mask-image:none; margin:0 auto 1rem; }
+  .profil-section .row{ flex-direction:column; text-align:center; }
+  .profil-section .col-md-5, .profil-section .col-md-7{ width:100%; }
+  .profil-section .p-4{ padding-left:1rem!important; padding-right:1rem!important; }
+}
+.profile-item{ display:flex; align-items:baseline; margin-bottom:.5rem; flex-wrap:wrap; }
+.profile-item .label{ min-width:120px; font-weight:600; }
+.profile-item .colon{ margin:0 .5rem; }
+.profile-item .value{ flex:1; }
+@media (max-width:576px){
+  .profile-item{ flex-direction:column; align-items:flex-start; }
+  .profile-item .colon{ display:none; }
+  .profile-item .label{ margin-bottom:.2rem; }
+}
+/* 4) Projects */
+.card{ position:relative; overflow:visible; transition:all .5s ease; }
+.card:hover{ transform:translateY(-5px); box-shadow:0 .5rem 1rem rgba(0,0,0,.15)!important; }
+.card-title{ font-weight:bold; }
+.project-card{ position:relative; background:#fff; overflow:hidden; padding-right:0!important; min-height:340px; display:flex; flex-direction:column; justify-content:center; }
+.project-card::after{
+  content:""; position:absolute; top:0; right:0; width:50%; height:100%;
+  background-image: var(--mockup); background-size:cover; background-position:right center; filter:brightness(1); opacity:.9; z-index:0;
+  mask-image: linear-gradient(to left, black 45%, transparent 100%); -webkit-mask-image: linear-gradient(to left, black 45%, transparent 100%);
+}
+.project-card .project-text{ position:relative; z-index:1; width:50%; padding-left:1rem; padding-right:1rem; }
+@media (max-width:991.98px){
+  .project-content-wrapper{ flex-direction:column-reverse; }
+  .project-text{ max-width:100%; padding-right:0; text-align:left; }
+  .mockup-carousel-container{ position:static; transform:none; width:60%; margin:0 auto 1.5rem; }
+}
+/* 5) Skills */
+.skill-badge-grid{ display:flex; flex-wrap:wrap; gap:1rem; padding:1rem 0; }
+.skill-badge{ background:#f8f9fa; color:#212529; font-weight:500; padding:.6rem 1.2rem; border-radius:2rem; box-shadow:0 1px 3px rgba(0,0,0,.05); display:flex; align-items:center; gap:.6rem; transition:transform .2s ease, background-color .2s ease; }
+.skill-badge:hover{ background:#e9ecef; transform:scale(1.05);}
+.skill-badge i{ font-size:1.2rem; }
+/* 6) Footer */
+.custom-footer{ background-color:slategray; color:#fff; }
